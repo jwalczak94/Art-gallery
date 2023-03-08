@@ -1,0 +1,37 @@
+.btn {
+  display: flex;
+
+  text-decoration: none;
+
+  &__text {
+    display: inline-block;
+
+    color: var(--whiteColor);
+    background-color: var(--primaryColor);
+    background-image: linear-gradient(var(--accentColor), var(--accentColor));
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: -400px 0;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    padding: 1.5rem 2rem;
+    text-transform: uppercase;
+    transition: 0.2s linear;
+  }
+
+  @media (hover: hover) {
+    &:hover &__text {
+      background-position: 0 0;
+    }
+
+    &:hover &__arrow {
+      background: var(--primaryColor);
+    }
+  }
+
+  &__arrow {
+    background: var(--accentColor);
+    padding: 1.5rem;
+    transition: 0.1s 0.2s linear;
+  }
+}

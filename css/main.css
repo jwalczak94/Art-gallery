@@ -1,0 +1,525 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeSpeed;
+}
+
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+body {
+  color: var(--secondaryColor);
+  font-family: "Outfit", sans-serif;
+}
+
+* {
+  transition: all ease 0.2s;
+}
+
+h1 {
+  font-size: 3.75rem;
+}
+@media only screen and (min-width: 48rem) {
+  h1 {
+    font-size: 4.375rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  h1 {
+    font-size: 6rem;
+  }
+}
+
+h2,
+h3 {
+  font-size: clamp(3.125rem, 2.4107rem + 1.4881vw, 3.75rem);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--primaryColor);
+  font-weight: 900;
+  font-family: "Big Shoulders Display", cursive;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.text-lead {
+  font-size: clamp(1.125rem, 1.0114rem + 0.4848vw, 1.375rem);
+  font-weight: 300;
+}
+
+.btn {
+  display: flex;
+  text-decoration: none;
+}
+.btn__text {
+  display: inline-block;
+  color: var(--whiteColor);
+  background-color: var(--primaryColor);
+  background-image: linear-gradient(var(--accentColor), var(--accentColor));
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: -400px 0;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  padding: 1.5rem 2rem;
+  text-transform: uppercase;
+  transition: 0.2s linear;
+}
+@media (hover: hover) {
+  .btn:hover .btn__text {
+    background-position: 0 0;
+  }
+  .btn:hover .btn__arrow {
+    background: var(--primaryColor);
+  }
+}
+.btn__arrow {
+  background: var(--accentColor);
+  padding: 1.5rem;
+  transition: 0.1s 0.2s linear;
+}
+
+:root {
+  --primaryColor: #151515;
+  --secondaryColor: #444444;
+  --accentColor: #d5966c;
+  --whiteColor: #ffffff;
+}
+
+.footer__content {
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__content {
+    flex-direction: row;
+    gap: 4rem;
+    padding: 3.5rem 2.5rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .footer__content {
+    gap: 8.75rem;
+    max-width: 68.75rem;
+    margin-inline: auto;
+    padding: 5rem 0;
+  }
+}
+.footer__logo {
+  height: 2.5rem;
+}
+@media only screen and (min-width: 75rem) {
+  .footer__logo {
+    height: 3.625rem;
+  }
+}
+.footer__description {
+  max-width: 27rem;
+}
+.footer__links {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+}
+@media only screen and (min-width: 48rem) {
+  .footer__links {
+    margin-left: auto;
+  }
+}
+.footer__links a {
+  font-size: 1.25rem;
+}
+@media (hover: hover) {
+  .footer__links a:hover i {
+    transform: translateY(-1.5px);
+  }
+}
+
+.header {
+  position: relative;
+  margin-bottom: 7.5rem;
+}
+@media only screen and (min-width: 48rem) {
+  .header {
+    max-width: 55rem;
+    margin-inline: auto;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .header {
+    background: linear-gradient(270deg, transparent 68.75%, var(--primaryColor) 31.25%);
+    margin-bottom: 11.25rem;
+    max-width: 90rem;
+    margin-inline: auto;
+    min-height: 50rem;
+  }
+}
+.header__images img {
+  object-fit: cover;
+  width: 100%;
+  max-height: 300px;
+}
+@media only screen and (min-width: 48rem) {
+  .header__images img {
+    max-height: 100%;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .header__images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .header__images {
+    left: 375px;
+  }
+}
+@media only screen and (min-width: 90rem) {
+  .header__images {
+    left: 450px;
+  }
+}
+.header__description {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 1rem 0 1rem;
+  max-width: 35rem;
+}
+@media only screen and (min-width: 48rem) {
+  .header__description {
+    padding: 9.0625rem 2.5rem 9.0625rem 0;
+    margin-left: auto;
+    gap: 3rem;
+    max-width: 24rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .header__description {
+    grid-template-columns: max-content 350px;
+    grid-template-areas: "title description" "title button";
+    gap: 4rem 0;
+    justify-content: space-between;
+    padding: 11.875rem 0 19.625rem 0;
+    max-width: 21.25rem;
+    max-width: 68.75rem;
+    margin-inline: auto;
+  }
+  .header__description h1 {
+    grid-area: title;
+    mix-blend-mode: difference;
+    color: var(--whiteColor);
+  }
+  .header__description p {
+    grid-area: description;
+  }
+  .header__description a {
+    grid-area: button;
+    grid-column-start: 2;
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 36rem;
+  margin-inline: auto;
+  margin-bottom: 7.5rem;
+  padding: 0 1rem;
+}
+@media only screen and (min-width: 37.5rem) {
+  .gallery {
+    padding: 0 2rem;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .gallery {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 1fr minmax(280px, 1fr);
+    grid-template-areas: "t1 p1 p1" "p2 p2 p3" "p2 p2 t2";
+    gap: 0.6875rem;
+    align-items: center;
+    max-width: 900px;
+    padding: 0 2.5rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .gallery {
+    max-width: 68.75rem;
+    margin-inline: auto;
+    grid-template-columns: minmax(400px, 445px) auto minmax(400px, 445px);
+    gap: 1.875rem;
+    margin-bottom: 11.25rem;
+    padding: 0;
+  }
+}
+.gallery__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 0.5625rem;
+  padding-bottom: 1rem;
+}
+@media only screen and (min-width: 48rem) {
+  .gallery__heading {
+    gap: 2rem;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .gallery__heading {
+    grid-area: t1;
+    order: 1;
+    padding: 0;
+    padding-right: 3.5rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .gallery__heading {
+    padding-right: 6.55rem;
+  }
+}
+.gallery__description {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--primaryColor);
+  padding: 3rem 1.5rem;
+  align-self: stretch;
+}
+@media only screen and (min-width: 48rem) {
+  .gallery__description {
+    gap: 2rem;
+  }
+}
+.gallery__description h3,
+.gallery__description p {
+  color: var(--whiteColor) !important;
+}
+@media only screen and (min-width: 48rem) {
+  .gallery__description {
+    padding: 5.3rem 1.75rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .gallery__description {
+    padding: 4rem 3rem;
+  }
+}
+.gallery__picture {
+  overflow: hidden;
+  align-self: stretch;
+}
+.gallery__picture:hover img {
+  transform: scale(1.1);
+}
+.gallery__picture img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+@media only screen and (min-width: 48rem) {
+  .gallery .picture-1 {
+    grid-area: p1;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .gallery .picture-2 {
+    grid-area: p2;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  .gallery .picture-3 {
+    grid-area: p3;
+  }
+}
+
+.footer-main {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+.footer-main__links a {
+  color: var(--whiteColor);
+}
+@media (hover: hover) {
+  .footer-main__links a:hover i {
+    color: var(--accentColor);
+  }
+}
+
+#map {
+  height: 34rem;
+  filter: grayscale(90);
+}
+@media (orientation: landscape) and (min-height: 300px) {
+  #map {
+    height: 70vh;
+  }
+}
+@media only screen and (min-width: 48rem) {
+  #map {
+    height: 78vw;
+    height: 78dvw;
+    max-height: 37.5rem;
+  }
+}
+@media only screen and (min-width: 48rem) and (max-height: 650px) {
+  #map {
+    height: 70vh !important;
+  }
+}
+
+.header-map {
+  position: relative;
+}
+.header-map .btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+@media only screen and (min-width: 48rem) {
+  .header-map .btn {
+    left: 2.5rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .header-map .btn {
+    left: 9.75rem;
+  }
+}
+
+.main {
+  background-color: var(--primaryColor);
+}
+.main .location-section {
+  padding: 3rem 1rem 3.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  color: var(--whiteColor);
+}
+@media only screen and (min-width: 48rem) {
+  .main .location-section {
+    padding: 5.25rem 2.5rem;
+    flex-direction: row;
+    gap: 4.25rem;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .main .location-section {
+    max-width: 68.75rem;
+    margin-inline: auto;
+    padding: 6.5rem 0 8rem 0;
+  }
+}
+.main .location-section h1 {
+  color: var(--whiteColor);
+  font-size: clamp(3.125rem, 2.6849rem + 1.8779vw, 4.375rem);
+}
+@media only screen and (min-width: 48rem) {
+  .main .location-section h1 {
+    max-width: 15.5rem;
+  }
+}
+.main .location-section__address {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+@media only screen and (min-width: 48rem) {
+  .main .location-section__address {
+    max-width: 30rem;
+  }
+}
+@media only screen and (min-width: 75rem) {
+  .main .location-section__address {
+    max-width: 34rem;
+    gap: 1.5rem;
+  }
+}
+.main .location-section__address h2 {
+  color: var(--accentColor);
+  font-size: clamp(2rem, 1.7143rem + 0.5952vw, 2.25rem);
+  line-height: 1;
+}
+.main .location-section__address ul {
+  list-style: none;
+}
+@media only screen and (min-width: 75rem) {
+  .main .location-section__address ul {
+    margin-bottom: 0.5rem;
+  }
+}
+.main .location-section__address li,
+.main .location-section__address p {
+  font-size: clamp(1.125rem, 0.8393rem + 0.5952vw, 1.375rem);
+  font-weight: 300;
+  line-height: 1.45;
+}
+
+.footer-location {
+  background-color: var(--accentColor);
+  color: var(--primaryColor);
+}
+.footer-location__links a {
+  color: var(--primaryColor);
+}
+
+/*# sourceMappingURL=main.css.map */

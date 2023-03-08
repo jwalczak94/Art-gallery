@@ -1,0 +1,108 @@
+@use "../abstract/mixins" as c;
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-width: 36rem;
+  margin-inline: auto;
+  margin-bottom: 7.5rem;
+  padding: 0 1rem;
+
+  @include c.respond(phone) {
+    padding: 0 2rem;
+  }
+
+  @include c.respond(tab-port) {
+    display: grid;
+    grid-template-columns: minmax(280px, 1fr) 1fr minmax(280px, 1fr);
+    grid-template-areas:
+      "t1 p1 p1"
+      "p2 p2 p3"
+      "p2 p2 t2";
+    gap: 0.6875rem;
+    align-items: center;
+
+    max-width: 900px;
+    padding: 0 2.5rem;
+  }
+
+  @include c.respond(tab-land) {
+    @include c.mainContent;
+    grid-template-columns: minmax(400px, 445px) auto minmax(400px, 445px);
+    gap: 1.875rem;
+    margin-bottom: 11.25rem;
+    padding: 0;
+  }
+
+  &__heading {
+    @include c.contentBox;
+    padding-top: 0.5625rem;
+    padding-bottom: 1rem;
+
+    @include c.respond(tab-port) {
+      grid-area: t1;
+      order: 1;
+      padding: 0;
+      padding-right: 3.5rem;
+    }
+
+    @include c.respond(tab-land) {
+      padding-right: 6.55rem;
+    }
+  }
+
+  &__description {
+    @include c.contentBox;
+    background-color: var(--primaryColor);
+    padding: 3rem 1.5rem;
+    align-self: stretch;
+
+    h3,
+    p {
+      color: var(--whiteColor) !important;
+    }
+
+    @include c.respond(tab-port) {
+      padding: 5.3rem 1.75rem;
+    }
+
+    @include c.respond(tab-land) {
+      padding: 4rem 3rem;
+    }
+  }
+
+  &__picture {
+    overflow: hidden;
+    align-self: stretch;
+
+    &:hover img {
+      transform: scale(1.1);
+    }
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .picture-1 {
+    @include c.respond(tab-port) {
+      grid-area: p1;
+    }
+  }
+
+  .picture-2 {
+    @include c.respond(tab-port) {
+      grid-area: p2;
+    }
+  }
+
+  .picture-3 {
+    @include c.respond(tab-port) {
+      grid-area: p3;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@use "../abstract/mixins" as c;
+
+.main {
+  background-color: var(--primaryColor);
+
+  .location-section {
+    padding: 3rem 1rem 3.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+
+    @include c.respond(tab-port) {
+      padding: 5.25rem 2.5rem;
+      flex-direction: row;
+      gap: 4.25rem;
+      justify-content: space-between;
+    }
+
+    @include c.respond(tab-land) {
+      @include c.mainContent;
+      padding: 6.5rem 0 8rem 0;
+    }
+
+    color: var(--whiteColor);
+
+    h1 {
+      color: var(--whiteColor);
+      font-size: clamp(3.125rem, 2.6849rem + 1.8779vw, 4.375rem);
+
+      @include c.respond(tab-port) {
+        max-width: 15.5rem;
+      }
+    }
+
+    &__address {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      @include c.respond(tab-port) {
+        max-width: 30rem;
+      }
+
+      @include c.respond(tab-land) {
+        max-width: 34rem;
+        gap: 1.5rem;
+      }
+
+      h2 {
+        color: var(--accentColor);
+        font-size: clamp(2rem, 1.7143rem + 0.5952vw, 2.25rem);
+        line-height: 1;
+      }
+
+      ul {
+        list-style: none;
+
+        @include c.respond(tab-land) {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      li,
+      p {
+        font-size: clamp(1.125rem, 0.8393rem + 0.5952vw, 1.375rem);
+        font-weight: 300;
+        line-height: 1.45;
+      }
+    }
+  }
+}

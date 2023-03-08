@@ -1,0 +1,38 @@
+@use "../abstract/mixins" as c;
+
+#map {
+  height: 34rem;
+  filter: grayscale(90);
+
+  @media (orientation: landscape) and (min-height: 300px) {
+    height: 70vh;
+  }
+
+  @include c.respond(tab-port) {
+    height: 78vw;
+    height: 78dvw;
+    max-height: 37.5rem;
+
+    @media (max-height: 650px) {
+      height: 70vh !important;
+    }
+  }
+}
+
+.header-map {
+  position: relative;
+  .btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+
+    @include c.respond(tab-port) {
+      left: 2.5rem;
+    }
+
+    @include c.respond(tab-land) {
+      left: 9.75rem;
+    }
+  }
+}

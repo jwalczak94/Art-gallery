@@ -1,0 +1,57 @@
+@use "../abstract/mixins" as c;
+
+.footer {
+  &__content {
+    padding: 3rem 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+
+    @include c.respond(tab-port) {
+      flex-direction: row;
+      gap: 4rem;
+
+      padding: 3.5rem 2.5rem;
+    }
+
+    @include c.respond(tab-land) {
+      gap: 8.75rem;
+      @include c.mainContent;
+      padding: 5rem 0;
+    }
+  }
+
+  &__logo {
+    height: 2.5rem;
+
+    @include c.respond(tab-land) {
+      height: 3.625rem;
+    }
+  }
+
+  &__description {
+    max-width: 27rem;
+  }
+
+  &__links {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+
+    @include c.respond(tab-port) {
+      margin-left: auto;
+    }
+
+    a {
+      font-size: 1.25rem;
+
+      @media (hover: hover) {
+        &:hover i {
+          transform: translateY(-1.5px);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@use "../abstract/mixins" as c;
+
+.footer-main {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+
+  &__links {
+    a {
+      color: var(--whiteColor);
+
+      @media (hover: hover) {
+        &:hover i {
+          color: var(--accentColor);
+        }
+      }
+    }
+  }
+}

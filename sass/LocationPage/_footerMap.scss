@@ -1,0 +1,12 @@
+@use "../abstract/mixins" as c;
+
+.footer-location {
+  background-color: var(--accentColor);
+  color: var(--primaryColor);
+
+  &__links {
+    a {
+      color: var(--primaryColor);
+    }
+  }
+}
